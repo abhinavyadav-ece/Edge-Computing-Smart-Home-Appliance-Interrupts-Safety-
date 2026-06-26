@@ -106,7 +106,7 @@ Flags are set in the ISR and consumed in the main loop, keeping ISRs short and s
 
 Click the link below to open the pre-wired simulation directly:
 
-**[▶ Open in Wokwi Simulator](https://wokwi.com/projects/new/arduino-uno)**
+**[▶ Open in Wokwi Simulator]([https://wokwi.com/projects/new/arduino-uno)](https://wokwi.com/projects/467919522467017729)**
 
 > Import `wokwi/diagram.json` via **File → Import Diagram** and paste `src/main.ino` into the editor.
 
@@ -188,8 +188,3 @@ constexpr uint16_t DEBOUNCE_MS  = 200;    // ISR debounce guard time
 - **Volatile flag pattern** — safe ISR ↔ main-loop communication
 - **Software debouncing** — inside ISRs without `delay()`
 
----
-
-## 📜 License
-
-MIT License – free to use, adapt, and share with attribution.
