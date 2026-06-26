@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" font-family="monospace" font-size="12">
+  <!-- Background -->
+  <rect width="900" height="620" fill="#1a1a2e" rx="12"/>
+  <text x="450" y="34" text-anchor="middle" fill="#e0e0e0" font-size="18" font-weight="bold">
+    Project 4 – Edge-Computing Smart Home Appliance
+  </text>
+  <text x="450" y="52" text-anchor="middle" fill="#aaa" font-size="12">
+    Hardware Interrupts &amp; Safety Override System
+  </text>
+
+  <!-- ─── Arduino Uno ─── -->
+  <rect x="330" y="200" width="240" height="280" rx="8" fill="#00508a" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="450" y="222" text-anchor="middle" fill="#fff" font-weight="bold" font-size="13">Arduino Uno</text>
+  <!-- Pin labels left -->
+  <text x="338" y="255" fill="#90caf9" font-size="10">D2 (INT0)</text>
+  <text x="338" y="285" fill="#90caf9" font-size="10">D3 (INT1)</text>
+  <text x="338" y="315" fill="#90caf9" font-size="10">A0</text>
+  <text x="338" y="345" fill="#90caf9" font-size="10">5V</text>
+  <text x="338" y="375" fill="#90caf9" font-size="10">GND</text>
+  <!-- Pin dots left -->
+  <circle cx="328" cy="251" r="5" fill="#4fc3f7"/>
+  <circle cx="328" cy="281" r="5" fill="#4fc3f7"/>
+  <circle cx="328" cy="311" r="5" fill="#4fc3f7"/>
+  <circle cx="328" cy="341" r="5" fill="#ff5252"/>
+  <circle cx="328" cy="371" r="5" fill="#333"/>
+  <!-- Pin labels right -->
+  <text x="563" y="255" fill="#a5d6a7" font-size="10">D8</text>
+  <text x="563" y="285" fill="#a5d6a7" font-size="10">D9</text>
+  <text x="563" y="315" fill="#a5d6a7" font-size="10">D10</text>
+  <!-- Pin dots right -->
+  <circle cx="572" cy="251" r="5" fill="#4fc3f7"/>
+  <circle cx="572" cy="281" r="5" fill="#4fc3f7"/>
+  <circle cx="572" cy="311" r="5" fill="#4fc3f7"/>
+
+  <!-- ─── PIR Sensor ─── -->
+  <rect x="60" y="80" width="130" height="80" rx="8" fill="#1b5e20" stroke="#69f0ae" stroke-width="2"/>
+  <text x="125" y="105" text-anchor="middle" fill="#fff" font-weight="bold">PIR Sensor</text>
+  <text x="125" y="122" text-anchor="middle" fill="#b9f6ca" font-size="10">HC-SR501</text>
+  <text x="125" y="140" text-anchor="middle" fill="#b9f6ca" font-size="10">Trigger: RISING</text>
+  <text x="68" y="155" fill="#69f0ae" font-size="10">OUT  VCC  GND</text>
+  <!-- OUT wire to D2 -->
+  <line x1="80"  y1="160" x2="80"  y2="251" stroke="#69f0ae" stroke-width="2" stroke-dasharray="4"/>
+  <line x1="80"  y1="251" x2="328" y2="251" stroke="#69f0ae" stroke-width="2"/>
+  <!-- VCC -->
+  <line x1="125" y1="160" x2="125" y2="200" stroke="#ff5252" stroke-width="1.5"/>
+  <line x1="125" y1="200" x2="328" y2="341"  stroke="#ff5252" stroke-width="1.5" stroke-dasharray="3"/>
+  <!-- GND -->
+  <line x1="170" y1="160" x2="170" y2="220" stroke="#555" stroke-width="1.5"/>
+  <line x1="170" y1="220" x2="328" y2="371" stroke="#555" stroke-width="1.5" stroke-dasharray="3"/>
+
+  <!-- ─── Override Button ─── -->
+  <rect x="60" y="220" width="130" height="70" rx="8" fill="#4a148c" stroke="#ea80fc" stroke-width="2"/>
+  <text x="125" y="245" text-anchor="middle" fill="#fff" font-weight="bold">Override</text>
+  <text x="125" y="262" text-anchor="middle" fill="#fff" font-weight="bold">Button</text>
+  <text x="125" y="279" text-anchor="middle" fill="#ea80fc" font-size="10">Trigger: FALLING</text>
+  <!-- wire to D3 -->
+  <line x1="190" y1="254" x2="328" y2="281" stroke="#ea80fc" stroke-width="2"/>
+
+  <!-- ─── Gas / Smoke Sensor ─── -->
+  <rect x="60" y="350" width="130" height="80" rx="8" fill="#b71c1c" stroke="#ff8a80" stroke-width="2"/>
+  <text x="125" y="375" text-anchor="middle" fill="#fff" font-weight="bold">Gas / Smoke</text>
+  <text x="125" y="392" text-anchor="middle" fill="#fff" font-weight="bold">MQ-2</text>
+  <text x="125" y="410" text-anchor="middle" fill="#ff8a80" font-size="10">Threshold: ADC &gt; 400</text>
+  <text x="68"  y="425" fill="#ff8a80" font-size="10">OUT  VCC  GND</text>
+  <!-- wire to A0 -->
+  <line x1="80"  y1="430" x2="80"  y2="480" stroke="#ff8a80" stroke-width="2"/>
+  <line x1="80"  y1="480" x2="290" y2="480" stroke="#ff8a80" stroke-width="2"/>
+  <line x1="290" y1="480" x2="290" y2="311" stroke="#ff8a80" stroke-width="2"/>
+  <line x1="290" y1="311" x2="328" y2="311" stroke="#ff8a80" stroke-width="2"/>
+
+  <!-- ─── White LED Array ─── -->
+  <rect x="700" y="100" width="150" height="70" rx="8" fill="#263238" stroke="#fff9c4" stroke-width="2"/>
+  <text x="775" y="127" text-anchor="middle" fill="#fff" font-weight="bold">White LED</text>
+  <text x="775" y="145" text-anchor="middle" fill="#fff" font-weight="bold">Array</text>
+  <text x="775" y="162" text-anchor="middle" fill="#fff9c4" font-size="10">Smart Lighting</text>
+  <!-- Resistor symbol D8 -->
+  <line x1="572" y1="251" x2="650" y2="251" stroke="#fff9c4" stroke-width="2"/>
+  <rect x="650" y="244" width="30" height="14" fill="none" stroke="#fff9c4" stroke-width="2"/>
+  <text x="665" y="241" text-anchor="middle" fill="#aaa" font-size="9">220Ω</text>
+  <line x1="680" y1="251" x2="700" y2="135" stroke="#fff9c4" stroke-width="2"/>
+
+  <!-- ─── Red Fault LED ─── -->
+  <rect x="700" y="220" width="150" height="70" rx="8" fill="#311b1b" stroke="#ff5252" stroke-width="2"/>
+  <text x="775" y="247" text-anchor="middle" fill="#fff" font-weight="bold">Red LED</text>
+  <text x="775" y="265" text-anchor="middle" fill="#ff5252" font-size="10">Fault Indicator</text>
+  <text x="775" y="282" text-anchor="middle" fill="#ff5252" font-size="10">D9 – Active HIGH</text>
+  <!-- Resistor D9 -->
+  <line x1="572" y1="281" x2="650" y2="281" stroke="#ff5252" stroke-width="2"/>
+  <rect x="650" y="274" width="30" height="14" fill="none" stroke="#ff5252" stroke-width="2"/>
+  <text x="665" y="271" text-anchor="middle" fill="#aaa" font-size="9">220Ω</text>
+  <line x1="680" y1="281" x2="700" y2="255" stroke="#ff5252" stroke-width="2"/>
+
+  <!-- ─── Buzzer ─── -->
+  <rect x="700" y="340" width="150" height="70" rx="8" fill="#1a237e" stroke="#82b1ff" stroke-width="2"/>
+  <text x="775" y="367" text-anchor="middle" fill="#fff" font-weight="bold">Buzzer</text>
+  <text x="775" y="385" text-anchor="middle" fill="#82b1ff" font-size="10">Active Alarm</text>
+  <text x="775" y="402" text-anchor="middle" fill="#82b1ff" font-size="10">D10 – Active HIGH</text>
+  <line x1="572" y1="311" x2="700" y2="375" stroke="#82b1ff" stroke-width="2"/>
+
+  <!-- ─── Priority Legend ─── -->
+  <rect x="330" y="510" width="240" height="100" rx="6" fill="#0d1117" stroke="#555" stroke-width="1"/>
+  <text x="450" y="528" text-anchor="middle" fill="#eee" font-weight="bold" font-size="11">Safety Priority</text>
+  <rect x="338" y="535" width="8" height="8" fill="#ff5252"/>
+  <text x="352" y="544" fill="#ff8a80" font-size="10">① Gas/Smoke OVERRIDE (highest)</text>
+  <rect x="338" y="550" width="8" height="8" fill="#ea80fc"/>
+  <text x="352" y="559" fill="#ea80fc" font-size="10">② Manual Override ISR</text>
+  <rect x="338" y="565" width="8" height="8" fill="#69f0ae"/>
+  <text x="352" y="574" fill="#69f0ae" font-size="10">③ PIR Motion ISR</text>
+  <rect x="338" y="580" width="8" height="8" fill="#fff9c4"/>
+  <text x="352" y="589" fill="#fff9c4" font-size="10">④ Auto-off Timer (10 s)</text>
+
+  <!-- ─── ISR badges ─── -->
+  <rect x="50" y="180" width="80" height="22" rx="4" fill="#69f0ae22" stroke="#69f0ae" stroke-width="1"/>
+  <text x="90" y="195" text-anchor="middle" fill="#69f0ae" font-size="10">ISR – INT0</text>
+  <rect x="50" y="300" width="80" height="22" rx="4" fill="#ea80fc22" stroke="#ea80fc" stroke-width="1"/>
+  <text x="90" y="315" text-anchor="middle" fill="#ea80fc" font-size="10">ISR – INT1</text>
+  <rect x="50" y="440" width="100" height="22" rx="4" fill="#ff525222" stroke="#ff5252" stroke-width="1"/>
+  <text x="100" y="455" text-anchor="middle" fill="#ff5252" font-size="10">ANALOG POLL</text>
+</svg>

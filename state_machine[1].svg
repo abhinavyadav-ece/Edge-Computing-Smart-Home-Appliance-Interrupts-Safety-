@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" font-family="sans-serif" font-size="13">
+  <rect width="800" height="560" fill="#0f0f1a" rx="10"/>
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="bold">
+    State Machine – Edge Smart Home Safety Logic
+  </text>
+
+  <!-- States -->
+  <!-- IDLE -->
+  <ellipse cx="400" cy="100" rx="80" ry="35" fill="#1b5e20" stroke="#69f0ae" stroke-width="2"/>
+  <text x="400" y="105" text-anchor="middle" fill="#fff" font-weight="bold">IDLE</text>
+
+  <!-- LIGHT ON -->
+  <ellipse cx="200" cy="280" rx="80" ry="35" fill="#1a237e" stroke="#82b1ff" stroke-width="2"/>
+  <text x="200" y="285" text-anchor="middle" fill="#fff" font-weight="bold">LIGHT ON</text>
+
+  <!-- OVERRIDE -->
+  <ellipse cx="400" cy="280" rx="80" ry="35" fill="#4a148c" stroke="#ea80fc" stroke-width="2"/>
+  <text x="400" y="285" text-anchor="middle" fill="#fff" font-weight="bold">OVERRIDE</text>
+
+  <!-- FAULT -->
+  <ellipse cx="600" cy="280" rx="80" ry="35" fill="#b71c1c" stroke="#ff5252" stroke-width="2"/>
+  <text x="600" y="278" text-anchor="middle" fill="#fff" font-weight="bold">FAULT</text>
+  <text x="600" y="294" text-anchor="middle" fill="#ff8a80" font-size="10">(Gas/Smoke)</text>
+
+  <!-- AUTO OFF -->
+  <ellipse cx="200" cy="450" rx="80" ry="35" fill="#263238" stroke="#90a4ae" stroke-width="2"/>
+  <text x="200" y="455" text-anchor="middle" fill="#fff" font-weight="bold">AUTO-OFF</text>
+
+  <!-- Arrows -->
+  <!-- IDLE → LIGHT ON (PIR) -->
+  <line x1="330" y1="120" x2="240" y2="250" stroke="#69f0ae" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="255" y="180" fill="#69f0ae" font-size="11">PIR INT0↑</text>
+
+  <!-- IDLE → OVERRIDE -->
+  <line x1="400" y1="135" x2="400" y2="245" stroke="#ea80fc" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="408" y="195" fill="#ea80fc" font-size="11">Override INT1↓</text>
+
+  <!-- IDLE → FAULT -->
+  <line x1="470" y1="120" x2="555" y2="250" stroke="#ff5252" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="525" y="175" fill="#ff5252" font-size="11">Gas&gt;400</text>
+
+  <!-- LIGHT ON → FAULT -->
+  <line x1="280" y1="268" x2="518" y2="268" stroke="#ff5252" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="390" y="260" fill="#ff5252" font-size="11">Gas&gt;400</text>
+
+  <!-- OVERRIDE → FAULT -->
+  <line x1="480" y1="280" x2="520" y2="280" stroke="#ff5252" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- LIGHT ON → AUTO OFF -->
+  <line x1="200" y1="315" x2="200" y2="415" stroke="#90a4ae" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="210" y="370" fill="#90a4ae" font-size="11">10 s timer</text>
+
+  <!-- AUTO OFF → IDLE -->
+  <path d="M 130 450 Q 50 450 50 100 Q 50 65 318 95" stroke="#90a4ae" stroke-width="1.5" fill="none" stroke-dasharray="5" marker-end="url(#arr)"/>
+  <text x="35" y="280" fill="#90a4ae" font-size="11" transform="rotate(-90 35 280)">→ IDLE</text>
+
+  <!-- FAULT → IDLE (gas clears) -->
+  <path d="M 680 265 Q 760 200 760 100 Q 760 65 482 100" stroke="#ff5252" stroke-width="1.5" fill="none" stroke-dasharray="5" marker-end="url(#arr)"/>
+  <text x="740" y="200" fill="#ff5252" font-size="11" transform="rotate(90 740 200)">Gas clear</text>
+
+  <!-- OVERRIDE → IDLE -->
+  <path d="M 400 315 Q 400 380 520 430 Q 600 460 650 380 Q 700 300 680 280" stroke="#ea80fc" stroke-width="1.5" fill="none" stroke-dasharray="5"/>
+  <text x="560" y="440" fill="#ea80fc" font-size="10">gas clear / override again</text>
+
+  <!-- Actions box -->
+  <rect x="10" y="380" width="150" height="120" rx="6" fill="#0d1117" stroke="#555"/>
+  <text x="85" y="398" text-anchor="middle" fill="#eee" font-size="11" font-weight="bold">FAULT Actions</text>
+  <text x="18" y="415" fill="#ff8a80" font-size="10">• Lights OFF</text>
+  <text x="18" y="430" fill="#ff8a80" font-size="10">• Red LED ON</text>
+  <text x="18" y="445" fill="#ff8a80" font-size="10">• Buzzer ON</text>
+  <text x="18" y="460" fill="#ff8a80" font-size="10">• Serial ALERT</text>
+  <text x="18" y="475" fill="#ff8a80" font-size="10">• All ISRs blocked</text>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#aaa"/>
+    </marker>
+  </defs>
+
+  <!-- Legend -->
+  <rect x="580" y="370" width="200" height="120" rx="6" fill="#0d1117" stroke="#555"/>
+  <text x="680" y="388" text-anchor="middle" fill="#eee" font-size="11" font-weight="bold">Key</text>
+  <line x1="590" y1="400" x2="620" y2="400" stroke="#69f0ae" stroke-width="2"/>
+  <text x="628" y="404" fill="#69f0ae" font-size="10">PIR / Normal flow</text>
+  <line x1="590" y1="418" x2="620" y2="418" stroke="#ea80fc" stroke-width="2"/>
+  <text x="628" y="422" fill="#ea80fc" font-size="10">Override ISR</text>
+  <line x1="590" y1="436" x2="620" y2="436" stroke="#ff5252" stroke-width="2"/>
+  <text x="628" y="440" fill="#ff5252" font-size="10">Gas/Smoke Fault</text>
+  <line x1="590" y1="454" x2="620" y2="454" stroke="#90a4ae" stroke-width="2" stroke-dasharray="4"/>
+  <text x="628" y="458" fill="#90a4ae" font-size="10">Auto-off / return</text>
+</svg>
